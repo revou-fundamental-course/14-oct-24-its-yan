@@ -68,10 +68,32 @@
   font-size: 2vw;
 }
 
-.Home-text h1 {
-  font-size: 3vw;
+.Home-text {
+  text-align: center;
+  margin-top: 20px;
 }
 
+.Home-text input {
+  padding: 10px;
+  margin: 10px;
+  font-size: 1.2rem;
+  border: 2px solid #007bff;
+  border-radius: 5px;
+}
+
+.Home-text button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.Home-text button:hover {
+  background-color: #0056b3;
+}
 /* Profile Image */
 .Home-profile {
   margin-top: 5vw;

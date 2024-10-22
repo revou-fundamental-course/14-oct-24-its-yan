@@ -1,5 +1,14 @@
-let userName = prompt("Please enter your name:") || "there";
-document.getElementById("userName").textContent = userName;
+function updateName() {
+    // Get the value from the input field
+    const name = document.getElementById("nameInput").value;
+
+    // Check if the name is empty, if not update the span
+    if (name.trim()) {
+        document.getElementById("userName").textContent = name;
+    } else {
+        alert("Masukkan nama yang valid.");
+    }
+}
 
 document.getElementById("messageForm").addEventListener("submit", function (event) {
     event.preventDefault();
