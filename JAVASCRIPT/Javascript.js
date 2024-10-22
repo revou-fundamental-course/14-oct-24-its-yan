@@ -1,8 +1,8 @@
-    let userName = prompt("Please enter your name:");
+  let userName = prompt("Please enter your name:");
 
-    if (userName) {
-        document.getElementById("userName").textContent = userName;
-    }
+  if (userName) {
+      document.getElementById("userName").textContent = userName;
+  }
 
     document.getElementById("messageForm").addEventListener("submit", function(event) {
         event.preventDefault();
