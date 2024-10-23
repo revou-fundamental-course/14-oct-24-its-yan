@@ -1,11 +1,21 @@
-   // Prompt the user for their name
-   let userName = prompt("Please enter your name:");
-
-   if (userName) {
-       document.getElementById("userName").textContent = userName;
-   }
-
-   document.getElementById("messageForm").addEventListener("submit", function (event) {
+// INPUT
+let userName = prompt("Please enter your name:");
+// OUTPUT
+if (userName) {
+    document.getElementById("userName").textContent = userName;
+}
+// END
+// Function sidenav OPEN
+function openNav() {
+    document.getElementById("sidenav").style.width = "250px";
+}
+// Function sidenav CLOSE
+function closeNav() {
+    document.getElementById("sidenav").style.width = "0";
+}
+// END
+// FORM CONTACT US
+document.getElementById("messageForm").addEventListener("submit", function (event) {
     event.preventDefault();
 
     const name = document.getElementById("name").value;

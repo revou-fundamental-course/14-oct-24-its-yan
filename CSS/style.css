@@ -1,13 +1,35 @@
+/* UNIVERSAL */
 /* Reset margins and padding */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 html {
   scroll-behavior: smooth;
 }
-/* Navbar styles */
+
+/* Background */
+body {
+  background-image: url(Img/Backround.png);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  background-attachment: fixed;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 0.1px;
+  transition: ease-out 0.5s;
+}
+
+/* END UNIVERSAL */
+
+/* Navbar */
 .Container-navbar {
   position: fixed;
   top: 0;
@@ -55,6 +77,68 @@ html {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Side Navigation Menu */
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #000971;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 1.25rem;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.sidenav-trigger {
+  display: none;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    display: none;
+  }
+
+  .sidenav-trigger {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidenav a {
+    font-size: 1rem;
+  }
+}
+
+/* END NAVBAR */
 /* Home Section */
 .Home {
   margin-top: 10vw;
@@ -96,6 +180,7 @@ html {
 .Home-text button:hover {
   background-color: #0056b3;
 }
+
 /* Profile Image */
 .Home-profile {
   margin-top: 5vw;
@@ -115,10 +200,33 @@ html {
 
 /* Floating effect */
 @keyframes floating {
-  0%, 100% { transform: translate(0, 0px); }
-  50% { transform: translate(0, 20px); }
+  0%, 100% {
+    transform: translate(0, 0px);
+  }
+
+  50% {
+    transform: translate(0, 20px);
+  }
 }
 
+@media (max-width: 480px) {
+  .Home-text h1 {
+    font-size: 1.5rem;
+    /* Adjust font size for small screens */
+  }
+
+  .Home-text h3 {
+    font-size: 1rem;
+    /* Adjust subheading font size */
+  }
+
+  .Home-profile img {
+    max-width: 150px;
+    /* Adjust image size on small screens */
+  }
+}
+
+/* END HOME */
 /* Profile Section */
 .Profile {
   display: flex;
@@ -164,7 +272,9 @@ html {
   border-radius: 5px;
   margin-left: 5px;
 }
+
 /* END PROFILE */
+/* Portofolio Section */
 .portfolio-section {
   text-align: center;
   padding: 2rem;
@@ -179,7 +289,8 @@ html {
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* Responsive columns */
   gap: 2rem;
   justify-items: center;
 }
@@ -212,17 +323,19 @@ html {
 
 @media (max-width: 768px) {
   .portfolio-grid {
-      grid-template-columns: 1fr; /* One column layout for smaller screens */
+    grid-template-columns: 1fr;
+    /* One column layout for smaller screens */
   }
 }
 
+/* END PROFILE */
 /* Contact Section */
 .Contact {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 3vw; 
-  padding: 5vh 0; 
+  gap: 3vw;
+  padding: 5vh 0;
 }
 
 .peta {
@@ -296,6 +409,54 @@ button:hover {
   margin: -0.75rem 0 1rem;
 }
 
+/* Responsive */
+@media (max-width: 768px) {
+  .Contact {
+    flex-direction: column;
+    /* Stack the items vertically */
+    gap: 2vh;
+    /* Adjust gap between elements */
+  }
+
+  form {
+    margin-right: 0;
+    /* Remove extra margin for smaller screens */
+    width: 90%;
+    /* Adjust form width for smaller screens */
+    max-width: 100%;
+    /* Ensure the form takes full width */
+  }
+
+  .peta iframe {
+    max-width: 100%;
+    /* Ensure the map takes full width on smaller screens */
+    height: 250px;
+    /* Adjust height for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  form {
+    padding: 1rem;
+    /* Reduce padding on very small screens */
+    width: 100%;
+    /* Make form full width */
+  }
+
+  input, textarea {
+    font-size: 0.9rem;
+    /* Slightly reduce input font size */
+  }
+
+  button {
+    font-size: 0.9rem;
+    /* Slightly reduce button font size */
+    padding: 0.5rem;
+    /* Reduce padding on smaller screens */
+  }
+}
+
+/* END CONTACTS */
 /* Footer Section */
 .footer {
   width: 100%;
@@ -334,6 +495,7 @@ button:hover {
   display: inline-block;
   margin: 0 15px;
 }
+
 .footer h3 {
   font-weight: bold;
   color: #fff;
@@ -344,27 +506,15 @@ button:hover {
   margin: 5vh 0;
   color: #000;
 }
-.card{
+
+.card {
   display: flex;
   gap: 5px;
   margin-top: -7vw;
   margin-left: 50vw;
   margin-bottom: 5vh;
 }
-/* Background */
-body {
-  background-image: url(Img/Backround.png);
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
-  width: 100%;
-  overflow-x: hidden;
-  background-attachment: fixed;
-}
-::-webkit-scrollbar {
-  width: 0.1px;
-  transition: ease-out 0.5s;
-}
+
 @media (max-width: 720px) {
   .footer {
     text-align: left;
@@ -408,6 +558,7 @@ body {
     margin: 2vh 0;
     font-size: 3vw;
   }
+
   .card {
     margin: 2vw auto;
   }
@@ -423,7 +574,20 @@ body {
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.card1:hover { background-color: #cc39a4; }
-.card2:hover { background-color: #03A9F4; }
-.card3:hover { background-color: rgb(136, 136, 136); }
-.card4:hover { background-color: #8c9eff; }
+.card1:hover {
+  background-color: #cc39a4;
+}
+
+.card2:hover {
+  background-color: #03A9F4;
+}
+
+.card3:hover {
+  background-color: rgb(136, 136, 136);
+}
+
+.card4:hover {
+  background-color: #8c9eff;
+}
+
+/* END FOOTER */

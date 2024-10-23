@@ -10,11 +10,10 @@
 
 <body>
 
-    <!-- Navbar -->
+    <!-- Navbar Section -->
     <header class="Container-navbar">
         <nav class="navbar" id="nav">
             <img src="Img/Logo-BryanHW.png" alt="Logo Bryan HW" class="logo">
-
             <ul>
                 <li><a href="#Section-Home" style="text-decoration: none;">
                         <h6>Home</h6>
@@ -30,8 +29,19 @@
                     </a></li>
             </ul>
         </nav>
-    </header>
 
+        <!-- Side Navigation Menu for Mobile View -->
+        <div id="sidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#Section-Home">Home</a>
+            <a href="#Section-Profile">Profile</a>
+            <a href="#Section-Portofolio">Portfolio</a>
+            <a href="#Section-Contact">Contact us</a>
+        </div>
+        <!-- Button to open the sidenav (visible only on mobile) -->
+        <span class="sidenav-trigger" onclick="openNav()">&#9776; Menu</span>
+    </header>
+    <!-- END NAVBAR -->
     <!-- Home Section -->
     <div class="Home" id="Section-Home">
         <div class="Section-Home">
@@ -44,6 +54,7 @@
             </div>
         </div>
     </div>
+    <!-- END HOME -->
     <!-- Profile Section -->
     <div class="Profile" id="Section-Profile">
         <!-- Left Column -->
@@ -97,6 +108,7 @@
             </div>
         </div>
     </div>
+    <!-- END PROFILE -->
     <!-- Portofolio Section -->
     <div class="portfolio-section" id="Section-Portofolio">
         <h2>My Portfolio</h2>
@@ -126,7 +138,7 @@
             </div>
         </div>
     </div>
-
+    <!-- END PORTFOLIO -->
     <!-- Contact Section -->
     <div class="Contact" id="Section-Contact">
         <div class="peta">
@@ -228,6 +240,8 @@
             </div>
         </div>
     </footer>
+    <!-- END FOOTER -->
+    <!-- JAVASCRIPT CONNECTION -->
     <script src="JAVASCRIPT/Javascript.js"></script>
 </body>
 
